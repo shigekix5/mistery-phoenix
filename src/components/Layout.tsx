@@ -1,5 +1,6 @@
 import Head from 'next/head';
 import Link from 'next/link';
+import '../styles/Layout.module.css';
 import { ReactNode } from 'react';
 
 type Props = {
@@ -10,18 +11,19 @@ const Layout = ({ children }: Props) => {
     return (
         <div>
             <Head>
-                <title>MyTemplate</title>
+                <title>Mistery Phoenix</title>
             </Head>
 
             <header className=''>
-                <Link href='/'>
-                    <a>Home</a>
-                </Link>
             </header>
 
             <div className='content'>{children}</div>
 
-            <footer className=''></footer>
+            <footer className=''>
+                <Link href='/'>
+                    <a>タイトルに戻る</a>
+                </Link>
+            </footer>
         </div>
     );
 };
