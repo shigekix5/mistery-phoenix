@@ -6,7 +6,7 @@ const Home: NextPage = () => {
         <div>
             <h1>Mistery Phoenix</h1>
 
-            <Link href='/scene/opening'>
+            <Link href='/eye'>
                 <a>START</a>
             </Link>
         </div>
