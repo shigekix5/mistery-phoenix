@@ -13,8 +13,8 @@ const Eye: NextPage = () => {
     let isErrored = false;
 
     const stopVideo = () => {
-        video.pause();
-        video.srcObject = null;
+        const stream = video.srcObject as MediaStream;
+        stream.getTracks().forEach(track => track.stop());
     };
 
     const updateCamera = () => {
