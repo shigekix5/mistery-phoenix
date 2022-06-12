@@ -1,0 +1,36 @@
+.lightText {
+    font-size: 6vw;
+    width: 100%;
+    height: 15vw;
+    text-align: center;
+    margin-top: 15vw;
+}
+.light {
+    width: 50vw;
+    height: 50vw;
+    margin: 0 auto;
+    border-radius:50%;
+    background-color: #fff;
+    animation: glowing 1s ease-in-out infinite alternate;
+}
+.light:active {
+    animation: glowingHard .5s ease-in-out infinite alternate;
+}
+
+@keyframes glowing {
+    from {
+      box-shadow: 0 0 1vw #fff, 0 0 2vw #fff, 0 0 3vw #f0f, 0 0 4vw #0ff, 0 0 5vw #e60073, 0 0 6vw #e60073, 0 0 7vw #e60073;
+    }
+    to {
+      box-shadow: 0 0 3vw #fff, 0 0 4vw #ff4da6, 0 0 5vw #ff4da6, 0 0 6vw #ff4da6, 0 0 7vw #ff4da6, 0 0 8vw #ff4da6, 0 0 9vw #ff4da6;
+    }
+}
+
+@keyframes glowingHard {
+    from {
+      box-shadow: 0 0 2vw #fff, 0 0 4vw #fff, 0 0 6vw #f0f, 0 0 8vw #0ff, 0 0 10vw #e60073, 0 0 12vw #e60073, 0 0 14vw #e60073;
+    }
+    to {
+      box-shadow: 0 0 6vw #fff, 0 0 8vw #ff4da6, 0 0 10vw #ff4da6, 0 0 12vw #ff4da6, 0 0 14vw #ff4da6, 0 0 16vw #ff4da6, 0 0 18vw #ff4da6;
+    }
+}

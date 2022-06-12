@@ -1,6 +1,6 @@
 import Head from 'next/head';
-import Link from 'next/link';
-import '../styles/Layout.module.css';
+//import Link from 'next/link';
+import style from '../styles/Layout.module.css';
 import { ReactNode } from 'react';
 
 type Props = {
@@ -13,17 +13,17 @@ const Layout = ({ children }: Props) => {
             <Head>
                 <title>Mistery Phoenix</title>
             </Head>
-
-            <header className=''>
-            </header>
-
-            <div className='content'>{children}</div>
-
-            <footer className=''>
+            <header className={style.header}>
+                {/*
                 <Link href='/'>
-                    <a>タイトルに戻る</a>
+                    <button type="button" className={style.backButton}>Back</button>            
                 </Link>
-            </footer>
+                */}
+            </header>
+            <div className='content'>
+                {children}
+                <div id='whiteMask' className={style.whiteMask}></div>
+            </div>
         </div>
     );
 };

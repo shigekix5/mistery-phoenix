@@ -1,6 +1,7 @@
 import type { NextPage } from 'next';
 import { useEffect } from 'react';
 import style from '../styles/Eye.module.css';
+import LayoutStyle from '../styles/Layout.module.css';
 
 const FACINGMODE = {
     FRONT: 'user',
@@ -14,6 +15,7 @@ const Eye: NextPage = () => {
 
     const stopVideo = () => {
         const stream = video.srcObject as MediaStream;
+        if(!stream) return;
         stream.getTracks().forEach(track => track.stop());
     };
 
@@ -29,7 +31,6 @@ const Eye: NextPage = () => {
                 video.srcObject = stream;
                 // videoのメタデータの取得が成功
                 video.addEventListener('loadedmetadata', function (event) {
-                    console.log('loadedmetadata');
                     video.play();
                 });
        
@@ -48,10 +49,10 @@ const Eye: NextPage = () => {
     };
 
     useEffect(()=>{
-        console.log('useEffectが実行されました');
+        const mask = document.querySelector('#whiteMask');
+        mask?.classList.remove(LayoutStyle.whiteMaskShow);
         video = document.querySelector('#video') as HTMLMediaElement;
         if(!video) return;
-
         updateCamera();
     }, []);
 
@@ -62,10 +63,12 @@ const Eye: NextPage = () => {
     };
 
     return (
-        <div>
-            <h1>Eye</h1>
-            <video id="video" className={style.video}></video>
-            <button type="button" className={style.button} onClick={toggleCamera}>カメラ切り替え</button>
+        <div className={style.eye}>
+            <div className={style.videoWrapper}>
+                <video id="video" className={style.video}></video>
+            </div>
+            <button type="button" className={style.changeButton} onClick={toggleCamera}>カメラ切り替え</button>
+            <div className={style.frame}></div>
         </div>
     );
 };
