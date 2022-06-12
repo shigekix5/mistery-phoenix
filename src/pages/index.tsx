@@ -21,6 +21,10 @@ const Home: NextPage = () => {
         touchTimer = setTimeout(onLongTouchEnd, 5000);
     };
 
+    const onTouchMoveignt = (e: any) => {
+        e.preventDefault();
+    };
+
     const onTouchEndLight = () => {
         clearTimeout(touchTimer);
     };
@@ -30,13 +34,19 @@ const Home: NextPage = () => {
             const text = document.querySelector('#lightText') as HTMLElement;
             if(!text) return;
             text.innerHTML = '光に触れ、念じ続けるのです...';
-        }, 5000)
+        }, 5000);
+
+        const light = document.querySelector(`.${style.light}`);
+        if(!light) return;
+        light.addEventListener('touchstart', onTouchStartLignt);
+        light.addEventListener('touchmove', onTouchMoveignt);
+        light.addEventListener('touchend', onTouchEndLight);
     }, []);
 
     return (
         <div>
             <h1 className={style.lightText} id='lightText'>聞いて…感じて…考えて…</h1>
-            <div className={style.light} onTouchStart={onTouchStartLignt} onTouchEnd={onTouchEndLight}></div>
+            <div className={style.light}></div>
         </div>
     );
 };
