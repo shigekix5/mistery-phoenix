@@ -50,6 +50,7 @@
 }
 .erroeMessageShow {
     display: block;
+    -webkit-tap-highlight-color: rgba(0,0,0,0);
 }
 .hikari {
     display: inline;
