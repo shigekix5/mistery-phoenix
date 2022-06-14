@@ -13,7 +13,7 @@
     background-color: #fff;
     animation: glowing 1s ease-in-out infinite alternate;
 }
-.light:active {
+.lightActive {
     animation: glowingHard .5s ease-in-out infinite alternate;
 }
 

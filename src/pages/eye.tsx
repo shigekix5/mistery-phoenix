@@ -36,6 +36,12 @@ const Eye: NextPage = () => {
        
             }).catch(function(err) {
                 console.log('The following error occurred: ', err);
+
+                // パーミッションエラーなら隠し表示
+                if(err.message.includes('Permission denied') || err.message.includes('denied permission.')) {
+                    return;
+                }
+
                 // エラー2回目なら抜ける
                 if(isErrored) return;
                 isErrored = true; 

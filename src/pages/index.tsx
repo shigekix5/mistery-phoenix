@@ -7,6 +7,7 @@ import LayoutStyle from '../styles/Layout.module.css';
 const Home: NextPage = () => {
     let touchTimer: NodeJS.Timer;
     const router = useRouter();
+    let light: HTMLElement;
 
     const onLongTouchEnd = () => {
         const mask = document.querySelector('#whiteMask');
@@ -19,6 +20,7 @@ const Home: NextPage = () => {
     const onTouchStartLignt = () => {
         clearTimeout(touchTimer);
         touchTimer = setTimeout(onLongTouchEnd, 5000);
+        light.classList.add(style.lightActive);
     };
 
     const onTouchMoveignt = (e: any) => {
@@ -26,6 +28,7 @@ const Home: NextPage = () => {
     };
 
     const onTouchEndLight = () => {
+        light.classList.remove(style.lightActive);
         clearTimeout(touchTimer);
     };
 
@@ -36,7 +39,7 @@ const Home: NextPage = () => {
             text.innerHTML = '光に触れ、念じ続けるのです...';
         }, 5000);
 
-        const light = document.querySelector(`.${style.light}`);
+        light = document.querySelector(`.${style.light}`) as HTMLElement;
         if(!light) return;
         light.addEventListener('touchstart', onTouchStartLignt);
         light.addEventListener('touchmove', onTouchMoveignt);
