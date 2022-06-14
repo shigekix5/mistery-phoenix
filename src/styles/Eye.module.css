@@ -41,6 +41,7 @@
     bottom: -5%;
     width: 90%;
     background: url('/images/mistery_b.png') center/cover;
+    transform: scaleX(-1);
 }
 .changeButton {
     position: absolute;
