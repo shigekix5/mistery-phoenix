@@ -33,6 +33,15 @@
     top: 50%;
     margin-top: -10vw;
 }
+.frame::after {
+    content: "";
+    position: absolute;
+    top: -1%;
+    left: 6%;
+    bottom: -5%;
+    width: 90%;
+    background: url('/images/mistery_b.png') center/cover;
+}
 .changeButton {
     position: absolute;
     right: 0;
