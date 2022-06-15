@@ -18,7 +18,7 @@ const Eye: NextPage = () => {
     let touchTimer: NodeJS.Timer;
 
     const onLongTouchEnd = () => {
-        router.push('/secret');
+        router.push('/secret0618');
     };
 
     const onTouchStartLignt = () => {
