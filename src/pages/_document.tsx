@@ -8,7 +8,7 @@ const MyDocument = () => {
                 <meta name='description' content='' />
                 <link rel="preconnect" href="https://fonts.googleapis.com"></link>
                 <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin=''></link>
-                <link href="https://fonts.googleapis.com/css2?family=Zen+Antique+Soft&display=swap" rel="stylesheet"></link>
+                <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@500&display=swap" rel="stylesheet"></link>
             </Head>
             <body>
                 <Main />

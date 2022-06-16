@@ -7,12 +7,12 @@ const nextConfig = {
       new webpack.BannerPlugin({
         banner: `
 /*!
-* These fonts are licensed under the Open Font License.
-*
-* You can use them in your products & projects – print or digital, commercial or otherwise.
-*
-* This isn't legal advice, please consider consulting a lawyer and see the full license for all details.
-*/
+ * These fonts are licensed under the Open Font License.
+ *
+ * Copyright (c) 2022, Google Inc,
+ *
+ * This Font Software is licensed under the SIL Open Font License, Version 1.1.
+ */
         `,
         raw: true
       })

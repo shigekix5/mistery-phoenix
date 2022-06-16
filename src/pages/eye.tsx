@@ -32,6 +32,7 @@ const Eye: NextPage = () => {
 
     const onTouchEndLight = () => {
         clearTimeout(touchTimer);
+        location.reload();
     };
 
     const stopVideo = () => {
@@ -111,7 +112,7 @@ const Eye: NextPage = () => {
                 エラーが発生したようです...<br />
                 サイトの設定のカメラの権限を許可して<br />
                 リロードするのです...<br />
-                <span className={style.hikari}>光</span>の導きのあらんことを...
+                <div className={style.hikari}>Reload</div>
             </div>
         </div>
     );
